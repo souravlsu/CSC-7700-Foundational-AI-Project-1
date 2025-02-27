@@ -116,13 +116,13 @@ mlp = MultilayerPerceptron([
 ])
 
 # Defining loss function
-loss_function = CrossEntropy()
+loss_function = SquaredError()
 
 # Train the model
 train_losses, val_losses= mlp.train(
     x_train, y_train, x_val, y_val,
     loss_function, learning_rate=0.001,
-    batch_size=64, epochs=25, optimizer='vanilla', momentum=0.7
+    batch_size=64, epochs=50, optimizer='vanilla', momentum=0.7
 )
 
 # Evaluating model on test set
